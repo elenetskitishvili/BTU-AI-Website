@@ -1,8 +1,10 @@
+import StudentSuccessStoriesComponents from "../components/StudentSuccessStoriesComponents"
+
 function studentSuccessStories() {
     return (
-        <div>
-            <h1>students</h1>
-        </div>
+        <>
+            <StudentSuccessStoriesComponents/>
+        </>
     )
 }
 

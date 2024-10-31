@@ -1,9 +1,11 @@
+import BachelorInAiComponents from "../components/BachelorInAiComponents";
+
 function BachelorInAi() {
-    return (
-        <div>
-            <h1>ai</h1>
-        </div>
-    )
+  return (
+    <>
+      <BachelorInAiComponents />
+    </>
+  );
 }
 
-export default BachelorInAi
+export default BachelorInAi;

@@ -1,8 +1,10 @@
+import AboutUsComponents from "../components/AboutUsComponents";
+
 function AboutUs() {
   return (
-    <div>
-      <h1>about us</h1>
-    </div>
+    <>
+      <AboutUsComponents />
+    </>
   );
 }
 

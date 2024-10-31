@@ -1,8 +1,10 @@
+import ContactUsComponents from "../components/ContactUsComponents";
+
 function ContactUs() {
   return (
-    <div>
-      <h1>ContactUs</h1>
-    </div>
+    <>
+      <ContactUsComponents />
+    </>
   );
 }
 

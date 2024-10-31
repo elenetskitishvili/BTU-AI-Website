@@ -1,8 +1,10 @@
+import FaqComponents from "../components/FaqComponents";
+
 function Faq() {
   return (
-    <div>
-      <h1>Faq</h1>
-    </div>
+    <>
+      <FaqComponents />
+    </>
   );
 }
 

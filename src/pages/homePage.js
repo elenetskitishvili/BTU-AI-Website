@@ -1,7 +1,11 @@
+import HomePageComponents from "../components/HomePageComponents";
+
 function HomePage() {
-  return <div>
-    <h1>home page</h1>
-  </div>;
+  return (
+    <>
+      <HomePageComponents />
+    </>
+  );
 }
 
 export default HomePage;

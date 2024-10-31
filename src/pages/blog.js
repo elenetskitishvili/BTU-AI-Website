@@ -1,8 +1,10 @@
+import BlogsComponents from "../components/BlogsComponents";
+
 function Blog() {
   return (
-    <div>
-      <h1>Blog</h1>
-    </div>
+    <>
+      <BlogsComponents />
+    </>
   );
 }
 
