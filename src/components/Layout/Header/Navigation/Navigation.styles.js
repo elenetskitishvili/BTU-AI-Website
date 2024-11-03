@@ -45,7 +45,7 @@ export const BurgerMenu = styled.div`
 `;
 
 export const MobileNav = styled.div`
-  display: ${(props) => (props.isOpen ? "block" : "none")};
+  display: ${(props) => (props.$isOpen ? "block" : "none")};
   position: absolute;
   top: 8rem;
   left: 10rem;

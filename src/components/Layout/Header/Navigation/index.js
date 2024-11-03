@@ -43,7 +43,7 @@ function Navigation() {
         {isOpen ? <FaTimes /> : <FaBars />}
       </BurgerMenu>
 
-      <MobileNav isOpen={isOpen}>
+      <MobileNav $isOpen={isOpen}>
         <ul>
           <li>
             <StyledLink to="/aboutus" onClick={toggleMenu}>ჩვენ შესახებ</StyledLink>
