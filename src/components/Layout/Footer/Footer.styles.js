@@ -21,11 +21,9 @@ export const Wrapper = styled.div`
     padding: 25px 77px;
   }
   @media (max-width: 45em) {
-    gap: 15px;
-    padding: 15px;
-  }
-  @media (max-width: 32em) {
     flex-direction: column;
+    gap: 15px;
+    padding: 17.5px;
   }
 `;
 
@@ -63,10 +61,6 @@ export const ContactUsContainer = styled.div`
     top: 20%;
   }
   @media (max-width: 45em) {
-    right: 40%;
-    top: 10%;
-  }
-  @media (max-width: 35em) {
     top: 5%;
     right: 55%;
   }

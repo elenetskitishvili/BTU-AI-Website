@@ -9,10 +9,6 @@ export const ContactUsContainer = styled.div`
     width: 0px;
     height: 0px;
   }
-  @media (max-width: 53em) {
-  }
-  @media (max-width: 34em) {
-  }
 `;
 
 export const Form = styled.form`
