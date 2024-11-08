@@ -12,6 +12,7 @@ const GlobalStyles = createGlobalStyle`
 html{
     font-size: 62.5%;
 
+
     /* 1440px - 9px */
     @media (max-width: 90em) {
         font-size: 56.25%;
@@ -35,6 +36,7 @@ html{
 
 body{
     font-family: "Noto Sans Georgian", sans-serif;
+
 }
 
 h1{
@@ -48,6 +50,8 @@ h1{
     padding-bottom: 1.3rem;
     margin-bottom: 7.3rem;
 }
+
+
 `;
 
 export default GlobalStyles;
