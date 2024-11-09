@@ -24,7 +24,7 @@ export const ProgramsList = styled.div`
 
 export const Card = styled.div`
   width: 28rem;
-  height: 28rem;
+  min-height: 28rem;
   background-color: ${(props) => props.color};
   color: #ffffff;
 
