@@ -1,4 +1,4 @@
-import AiSection from "./AiSection";
+import AiSection from './AiSection';
 import Programs from "./Programs";
 import Slider from "./Slider";
 import SuccessStories from "./SuccessStories";
@@ -12,6 +12,6 @@ function HomePageComponents() {
       <Programs />
     </div>
   );
-}
+};
 
 export default HomePageComponents;

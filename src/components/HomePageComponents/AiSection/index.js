@@ -1,7 +1,4 @@
-function AiSection() {
-  return <div>
-    <h1>Ai Section</h1>
-  </div>;
-}
+import AiSection from './AiSection';
 
 export default AiSection;
+
