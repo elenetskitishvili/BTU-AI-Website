@@ -4,7 +4,7 @@ export default function FaqAiLab() {
   return (
     <div style={{ height: "600px" }}>
       <PageTitleSection title="AI ლაბორატორიები" />
-      <SectionHeading />
+      <SectionHeading heading="AI კვლევები" faq="FAQ" />
     </div>
   );
 }
