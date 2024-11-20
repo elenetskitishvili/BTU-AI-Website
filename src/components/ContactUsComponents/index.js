@@ -1,9 +1,16 @@
 import React from "react";
-// import arrow from "./../../assets/images/Frame.png";
-// import {} from "./ContactUs.styles";
+import PageTitleSection from "./../ReusableComponents/PageTitleSection";
+import SectionHeading from "./../ReusableComponents/SectionHeading";
+import { GoogleMapWrapper } from "./ContactUs.styles";
 
 function ContactUsComponents() {
-  return <></>;
+  return (
+    <>
+      <PageTitleSection title="კონტაქტი" />
+      <SectionHeading heading="საკონტაქტო ინფორმაცია" />
+      <GoogleMapWrapper></GoogleMapWrapper>
+    </>
+  );
 }
 
 export default ContactUsComponents;
