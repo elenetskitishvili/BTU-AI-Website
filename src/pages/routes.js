@@ -9,6 +9,7 @@ import Faq from "./faq";
 import StudentSuccessStories from "./studentSuccessStories";
 import FaqAiLab from "./faqAiLab";
 import FaqAiResearch from "./faqAiResearch";
+import FaqAiLiteracy from "./faqAiLiteracy";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: "faq/airesearch",
         element: <FaqAiResearch />,
+      },
+      {
+        path: "faq/ailiteracy",
+        element: <FaqAiLiteracy />,
       },
     ],
   },
