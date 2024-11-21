@@ -4,6 +4,7 @@ export const SectionHeadingWrapper = styled.div`
   max-width: 1245px;
   margin: 0 auto;
   margin-top: 137px;
+  margin-bottom: 40px;
   color: #fd007d;
   border-bottom: 3px solid #fd007d;
   display: flex;
