@@ -1,18 +1,20 @@
 import PageTitleSection from "../components/ReusableComponents/PageTitleSection";
 import SectionHeading from "../components/ReusableComponents/SectionHeading";
 import FaqAside from "../components/FaqComponents/FaqAside";
-import AiLabArticle from "../components/FaqComponents/AiLabArticle/index";
+import AiResearchArticle from "../components/FaqComponents/AIResearchArticle";
 import { SectionContent } from "../components/FaqComponents/FaqLayout/FaqLayoutStyles";
 
-export default function FaqAiLab() {
+function faqAiResearch() {
   return (
     <main>
-      <PageTitleSection title="AI ლაბორატორიები" />
-      <SectionHeading heading="AI ლაბორატორიები" faq="FAQ" />
+      <PageTitleSection title="AI კვლევები" />
+      <SectionHeading heading="AI კვლევები" faq="FAQ" />
       <SectionContent>
-        <AiLabArticle />
+        <AiResearchArticle />
         <FaqAside />
       </SectionContent>
     </main>
   );
 }
+
+export default faqAiResearch;
