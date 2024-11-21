@@ -43,7 +43,7 @@ export default function AiLabArticle() {
           მეწარმეობის, ტექნოლოგიებისა და ინოვაციების მიმართულებით.
         </ArticleListItem>
       </ArticleList>
-      <p className="article-text">BTU AI LAB - ის ბაზაზე ჩატარდა:</p>
+      <ArticleText>BTU AI LAB - ის ბაზაზე ჩატარდა:</ArticleText>
       <ArticleList>
         <ArticleListItem>
           <ArticleLink
