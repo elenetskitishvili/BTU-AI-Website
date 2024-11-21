@@ -16,7 +16,6 @@ export const ArticleText = styled.p`
 export const ArticleLink = styled.a`
   text-decoration: underline;
   color: inherit;
-  display: inline-block;
   padding: 0 4px;
   font-weight: 400;
 
