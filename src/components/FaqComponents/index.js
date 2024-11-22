@@ -1,7 +1,9 @@
+// import PageTitleSection from "./../ReusableComponents/PageTitleSection"
+
 function FaqComponents() {
   return (
     <div>
-      <h1>faq components</h1>
+      {/* <PageTitleSection title="ხშირად დასმული კითხვები" /> */}
     </div>
   );
 }

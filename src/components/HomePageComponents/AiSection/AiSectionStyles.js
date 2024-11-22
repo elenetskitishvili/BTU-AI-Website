@@ -1,19 +1,16 @@
 import styled from 'styled-components';
 
 export const SectionWrapper = styled.div`
-  position: absolute;
-  width: 1245px;
-  height: 531px;
-  left: 177px;
-  top: 702px;
+   
+ 
+  width: 124.5rem;
 `;
 
 export const Heading = styled.h2`
-  position: absolute;
+ 
   width: 349px;
   height: 33px;
-  left: 0;
-  top: 0;
+  
 
   font-family: 'Noto Sans Georgian', sans-serif;
   font-style: normal;
@@ -26,21 +23,19 @@ export const Heading = styled.h2`
 `;
 
 export const Divider = styled.div`
-  position: absolute;
+ 
   width: 388px;
   height: 0;
-  left: 0;
-  top: 46px;
+  
 
   border: 4px solid #fd007d;
 `;
 
 export const SubHeading = styled.p`
-  position: absolute;
+  
   width: 659px;
   height: 150px;
-  left: 0;
-  top: 117px;
+  
 
   font-family: 'Bebas Neue', sans-serif;
   font-style: normal;
@@ -52,11 +47,10 @@ export const SubHeading = styled.p`
 `;
 
 export const Description = styled.div`
-  position: absolute;
+  
   width: 696px;
   height: 150px;
-  left: 0;
-  top: 310px;
+ 
 
   font-family: 'Bebas Neue', sans-serif;
   font-style: normal;
