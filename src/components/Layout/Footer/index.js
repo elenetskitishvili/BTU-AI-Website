@@ -1,15 +1,21 @@
 import React from "react";
 import logo from "./../../../assets/images/LOGO2.png";
+import arrow from "./../../../assets/images/Frame.png";
 import {
   FooterContainer,
   CopyrightContainer,
   Wrapper,
   Text,
   ListItem,
+  ContactUsWrapper,
   ContactUsContainer,
+  Form,
+  Label,
+  InputContainer,
+  Input,
+  Icon,
+  Button,
 } from "./Footer.styles";
-
-import ContactUsComponents from "../../ContactUsComponents";
 
 function Footer() {
   return (
@@ -32,9 +38,19 @@ function Footer() {
       <CopyrightContainer>
         <span>Copyright © 2024 - BTUSTUDENTS</span>
       </CopyrightContainer>
-      <ContactUsContainer>
-        <ContactUsComponents />
-      </ContactUsContainer>
+      <ContactUsWrapper>
+        <ContactUsContainer>
+          <Form>
+            <Label>მოგვწერე</Label>
+            <InputContainer>
+              <Input placeholder="Your Email" />
+              <Button type="submit">
+                <Icon src={arrow} alt="arrow icon" />
+              </Button>{" "}
+            </InputContainer>
+          </Form>
+        </ContactUsContainer>{" "}
+      </ContactUsWrapper>
     </FooterContainer>
   );
 }
