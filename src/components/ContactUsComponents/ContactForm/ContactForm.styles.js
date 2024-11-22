@@ -5,6 +5,7 @@ export const FormWrapper = styled.div`
   background: #070b80;
   margin: 0 auto;
   color: #ffffff;
+  border-radius: 6px;
 `;
 
 export const FormHeading = styled.h5`
@@ -63,6 +64,7 @@ export const TextArea = styled.textarea`
 `;
 
 export const ButtonContainer = styled.div`
+  margin: 0 auto;
   width: 290px;
   height: 53px;
   border-radius: 12px;
@@ -72,4 +74,7 @@ export const ButtonContainer = styled.div`
   align-items: center;
   gap: 28px;
   padding: 10px 59px;
+  margin-top: 39px;
 `;
+
+export const ButtonBox = styled.button``;
