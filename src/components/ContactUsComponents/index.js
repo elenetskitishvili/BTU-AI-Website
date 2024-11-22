@@ -16,6 +16,7 @@ import {
 import Phone from "./../../assets/images/Vector.svg";
 import Message from "./../../assets/images/Vector (1).svg";
 import Location from "./../../assets/images/Location.svg";
+import ContactForm from "./ContactForm";
 
 function ContactUsComponents() {
   return (
@@ -68,6 +69,7 @@ function ContactUsComponents() {
           ></Iframe>
         </GoogleMapWrapper>
         <SectionHeading heading="მოგვწერე" showIcons={false} />
+        <ContactForm />
       </Wrapper>
     </>
   );

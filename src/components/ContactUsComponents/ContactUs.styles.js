@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   margin: 0 auto;
   font-size: 24px;
   font-weight: 400;
+  margin-bottom: 216px;
 `;
 
 export const GoogleMapWrapper = styled.div`
