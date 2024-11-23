@@ -19,7 +19,7 @@ function FaqComponents() {
 
       {/* FAQ List Section */}
       <FaqContainer>
-        <ListItem onClick={() => handleNavigate("/AiLabArticle/ailab")}>
+        <ListItem onClick={() => handleNavigate("/faq/ailab")}>
           <Line />
           <Text>AI ლაბორატორიები</Text>
         </ListItem>
