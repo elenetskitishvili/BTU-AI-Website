@@ -70,3 +70,16 @@ export const Description = styled.div`
     }
   }
 `;
+
+
+export const VideoWrapper = styled.div`
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  iframe {
+    max-width: 100%;
+    border: none;
+  }
+`;
