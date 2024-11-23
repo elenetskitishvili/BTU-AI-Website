@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const SectionWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 13px;
   width: 100%;
   max-width: 1245px;
   margin: 0 auto;
@@ -31,7 +31,7 @@ export const ContentWrapper = styled.div`
 export const TextContent = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 23px;
   flex: 1;
 
   @media (max-width: 768px) {
@@ -50,6 +50,10 @@ export const Heading = styled.h2`
   line-height: 33px;
   text-transform: uppercase;
   color: #fd007d;
+
+  span {
+    color: #000000;
+  }
 `;
 
 // Divider
@@ -73,6 +77,7 @@ export const SubHeading = styled.div`
   ul {
     margin: 0;
     padding-left: 20px;
+    padding-top: 28px;
     list-style-type: disc;
 
     li {

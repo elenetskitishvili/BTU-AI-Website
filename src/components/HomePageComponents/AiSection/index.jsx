@@ -14,7 +14,7 @@ const AiSection = () => {
   return (
     <SectionWrapper>
       {/* Heading and Divider */}
-      <Heading>AI ბაკალავრის პროგრამა</Heading>
+      <Heading>AI <span>ბაკალავრის პროგრამა</span></Heading>
       <Divider />
 
       {/* Content Wrapper for Two-Column Layout */}
