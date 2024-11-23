@@ -7,6 +7,12 @@ import {
   GraduateList,
   GraduateItem,
   GraduateText,
+  CardContainer,
+  CardList,
+  CardItem,
+  CardImage,
+  CardText,
+  CardTextContainer
 } from "./StudentSuccess.styles";
 
 function SuccessStories() {
@@ -53,22 +59,26 @@ function SuccessStories() {
   return (
     <div className="success-stories">
       <PageTitleSection title="წარმატების ისტორიები" />
-      <section>
-        <h2>Card Content</h2>
-        <ul>
-          {cardContent.map((card) => (
-            <li key={card.id}>
-              <img
-                src={card.picture}
-                alt={card.student_full_name}
-                style={{ width: "100px" }}
-              />
-              <p>Program: {card.program_name}</p>
-              <p>Student: {card.student_full_name}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
+      <Section>
+        <SectionWrapper>
+          <CardContainer>
+            <Title>women in ai პროგრამის სტუდენტები</Title>
+            <CardList>
+              {cardContent.map((card) => (
+                <CardItem key={card.id}>
+                  <CardTextContainer>
+                    <CardText>პროგრამა {card.program_name}</CardText>
+                    <CardText>
+                      წარმატებული სტუდენტი {card.student_full_name}
+                    </CardText>
+                  </CardTextContainer>
+                  <CardImage src={card.picture} alt={card.student_full_name} />
+                </CardItem>
+              ))}
+            </CardList>
+          </CardContainer>
+        </SectionWrapper>
+      </Section>
 
       <Section>
         <SectionWrapper>
