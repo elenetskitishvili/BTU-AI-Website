@@ -1,56 +1,37 @@
 import styled from "styled-components";
 
-export const ContactUsContainer = styled.div`
-  width: 539px;
-  height: 382px;
+export const Wrapper = styled.div`
+  max-width: 1245px;
+  margin: 0 auto;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32.69px;
+  letter-spacing: -0.05em;
+  margin-bottom: 216px;
+
+  @media (max-width: 75em) {
+    font-size: 16px;
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+
+  @media (max-width: 43.75em) {
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+`;
+
+export const GoogleMapButton = styled.button`
+  border-radius: 12px;
   background-color: #fd007d;
-  border-top-left-radius: 40px;
-  @media (max-width: 85em) {
-    width: 0px;
-    height: 0px;
-  }
-`;
-
-export const Form = styled.form`
-  padding: 179px 0 0 47px;
-  @media (max-width: 85em) {
-    padding: 0;
-  }
-`;
-
-export const Label = styled.label`
-  font-weight: 700;
-  font-size: 13px;
-  color: #ffffff;
-`;
-
-export const InputContainer = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-export const Input = styled.input`
-  width: 144px;
-  height: 21px;
-  border-radius: 30px;
+  color: #ffff;
   border: none;
-  padding-left: 11px;
-  &::placeholder {
-    color: #4747476e;
-    font-weight: 700;
-  }
-  &:focus {
-    border: none;
-    outline: none;
-  }
-`;
+  padding: 12px;
+  margin-top: 10px;
+  font-size: 16px;
 
-export const Button = styled.button`
-  background: transparent;
-  border: none;
-`;
-
-export const Icon = styled.img`
-  position: relative;
-  right: 11px;
+  @media (max-width: 43.75em) {
+    margin-left: 18px;
+    margin-right: 18px;
+  }
 `;

@@ -51,7 +51,6 @@ h1{
     margin-bottom: 7.3rem;
 }
 
-
 `;
 
 export default GlobalStyles;
