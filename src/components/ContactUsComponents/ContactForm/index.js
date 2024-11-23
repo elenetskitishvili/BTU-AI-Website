@@ -40,7 +40,7 @@ function ContactForm() {
         </div>
         <ButtonContainer>
           <p>გაგზავნა</p>
-          <img src={Button}></img>
+          <img src={Button} alt="button"></img>
         </ButtonContainer>
       </Form>
     </FormWrapper>
