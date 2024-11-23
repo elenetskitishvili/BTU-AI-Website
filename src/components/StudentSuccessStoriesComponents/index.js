@@ -12,13 +12,19 @@ import {
   CardItem,
   CardImage,
   CardText,
-  CardTextContainer
+  CardTextContainer,
+  ShowMoreButton,
 } from "./StudentSuccess.styles";
 
 function SuccessStories() {
   const [cardContent, setCardContent] = useState([]);
   const [graduateSuccess, setGraduateSuccess] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [visibleCards, setVisibleCards] = useState(4);
+
+  const showMoreCards = () => {
+    setVisibleCards((prev) => prev + 4);
+  };
 
   const API_BASE_URL =
     "https://wai-django-final-b9968118d906.herokuapp.com/success-stories/api";
@@ -64,18 +70,23 @@ function SuccessStories() {
           <CardContainer>
             <Title>women in ai პროგრამის სტუდენტები</Title>
             <CardList>
-              {cardContent.map((card) => (
+              {cardContent.slice(0, visibleCards).map((card) => (
                 <CardItem key={card.id}>
                   <CardTextContainer>
-                    <CardText>პროგრამა {card.program_name}</CardText>
+                    <CardText>პროგრამა - {card.program_name}</CardText>
                     <CardText>
-                      წარმატებული სტუდენტი {card.student_full_name}
+                      წარმატებული სტუდენტი <br /> {card.student_full_name}
                     </CardText>
                   </CardTextContainer>
                   <CardImage src={card.picture} alt={card.student_full_name} />
                 </CardItem>
               ))}
             </CardList>
+            {visibleCards < cardContent.length && (
+              <ShowMoreButton onClick={showMoreCards}>
+                გაიცანი, ყველა წარმატებული სტუდენტი...
+              </ShowMoreButton>
+            )}
           </CardContainer>
         </SectionWrapper>
       </Section>
