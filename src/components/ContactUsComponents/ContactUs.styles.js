@@ -8,17 +8,6 @@ export const Wrapper = styled.div`
   margin-bottom: 216px;
 `;
 
-export const GoogleMapWrapper = styled.div`
-  margin: 0 auto;
-  margin-top: 95px;
-`;
-
-export const Iframe = styled.iframe`
-  width: 1240px;
-  height: 852px;
-  border: 0;
-`;
-
 export const ContactInformation = styled.div``;
 
 export const InfoText = styled.p`
