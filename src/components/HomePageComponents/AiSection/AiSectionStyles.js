@@ -4,11 +4,10 @@ import styled from "styled-components";
 export const SectionWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 13px;
   width: 100%;
   max-width: 1245px;
   margin: 0 auto;
-  padding: 56px 20px;
+  padding: 56px 0px;
   background-color: #ffffff;
 `;
 
