@@ -1,101 +1,75 @@
+import React, { useEffect, useState } from "react";
 import {
   ArticleContent,
-  ArticleLink,
   ArticleList,
   ArticleListItem,
-} from "../AiLabArticle/AiLabArticleStyles.js";
+  ArticleLink,
+} from "../AiLabArticle/AiLabArticleStyles";
 
 export default function AiResearchArticle() {
+  const [articles, setArticles] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch("http://127.0.0.1:8000/api/research-articles/")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch articles");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setArticles(data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        setError(error.message);
+        setIsLoading(false);
+      });
+  }, []);
+
+  if (isLoading) {
+    return <p>Loading articles...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
+
+  const firstFourArticles = articles.slice(0, 4);
+  const lastFourArticles = articles.slice(4);
+
   return (
     <ArticleContent>
       <ArticleList>
-        <ArticleListItem>
-          ნინო ენუქიძე, მარი დგებუაძე -
-          <ArticleLink
-            href="https://drive.google.com/file/d/1RCW7gCNx5zmFqI0lyslNAdGAwYEgejmF/view"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            ხელოვნური ინტელექტის განვითარების ეროვნული სტრატეგიის შემუშავების
-            საჭიროება საქართველოში
-          </ArticleLink>
-        </ArticleListItem>
-        <ArticleListItem>
-          Khatuna Burkadze -
-          <ArticleLink
-            href="https://lawandworld.ge/index.php/law/article/view/273"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            The Legal Aspects of Artificial Intelligence based on the EU
-            Experience
-          </ArticleLink>
-        </ArticleListItem>
-        <ArticleListItem>
-          Maia Melikidze -
-          <ArticleLink
-            href="http://economicprofile.org/journal/1021"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Renewable (solar energy), Modern situation, economic challenges, and
-            the role of artificial intelligence
-          </ArticleLink>
-        </ArticleListItem>
-        <ArticleListItem>
-          Zviad Gabisonia -
-          <ArticleLink
-            href="https://justice.gov.ge/files/eY0oDTztsvBp.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            NATURE OF ARTIFICIAL INTELLIGENCE AND THE PROBLEM OF RECOGNISING IT
-            AS A SUBJECT OF LAW
-          </ArticleLink>
-        </ArticleListItem>
-        <ArticleListItem>
-          <ArticleLink
-            href="https://www.entrepreneur.com/ka/siakhleebi-da-tendentsiebi/khelovnuri-intelektis/444247?fbclid=IwAR2jsKSQAFi4yAV-a0qBMe3NEuZiYV99PQtotF8tfQ48fscuxSSK_lharfQ"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            ხელოვნური ინტელექტის ეროვნული სტრატეგიის საჭიროებები, შესაძლებლობები
-            და რისკები
-          </ArticleLink>
-          - BTU-ს დოქტორანტის კვლევითი ნაშრომი
-        </ArticleListItem>
-        <ArticleListItem>
-          <ArticleLink
-            href="https://www.entrepreneur.com/ka/business-news/khelovnuri-intelekti/444148?fbclid=IwAR0cZlY1biEqpZFSbcNaS5yTCBVKO88ChihRxIfW16VEN_r5tBU2r8_B5HY"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            ხელოვნური ინტელექტი განათლების სფეროში
-          </ArticleLink>
-          - სტრატეგიის აუცილებლობა, შესაძლებლობები და რისკები - BTU-ს
-          დოქტორანტის კვლევითი ნაშრომი
-        </ArticleListItem>
-        <ArticleListItem>
-          <ArticleLink
-            href="https://www.entrepreneur.com/ka/business-news/khelovnuri-intelektis/444147?fbclid=IwAR1Z5De-iFBhx1EUUVJ2UTISki7NimP9rlesSJExpiCgohl-1Le4SVoQO6g"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            ხელოვნური ინტელექტის ეროვნული სტრატეგიის საჭიროებები, შესაძლებლობები
-            და რისკები
-          </ArticleLink>
-          - BTU-ს დოქტორანტის კვლევითი ნაშრომი
-        </ArticleListItem>
-        <ArticleListItem>
-          <ArticleLink
-            href="https://www.entrepreneur.com/ka/siakhleebi-da-tendentsiebi/khelovnuri-intelektis/444246"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            ხელოვნური ინტელექტის მნიშვნელობა და მექანიზმი ინდუსტრიულ რევოლუციაში
-          </ArticleLink>
-          - BTU-ს სტუდენტის კვლევითი ნაშრომი
-        </ArticleListItem>
+        {firstFourArticles.map((article) => (
+          <ArticleListItem key={article.id}>
+            {article.author && <span> {article.author} - </span>}
+            <ArticleLink
+              href={article.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {article.title}
+            </ArticleLink>
+          </ArticleListItem>
+        ))}
+      </ArticleList>
+
+      <ArticleList>
+        {lastFourArticles.map((article) => (
+          <ArticleListItem key={article.id}>
+            <ArticleLink
+              href={article.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {article.title}
+            </ArticleLink>
+            {article.author && <span> - {article.author}</span>}
+          </ArticleListItem>
+        ))}
       </ArticleList>
     </ArticleContent>
   );
