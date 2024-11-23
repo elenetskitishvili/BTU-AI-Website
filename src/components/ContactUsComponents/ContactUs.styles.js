@@ -5,42 +5,33 @@ export const Wrapper = styled.div`
   margin: 0 auto;
   font-size: 24px;
   font-weight: 400;
+  line-height: 32.69px;
+  letter-spacing: -0.05em;
   margin-bottom: 216px;
-`;
 
-export const ContactInformation = styled.div``;
+  @media (max-width: 75em) {
+    font-size: 16px;
+    margin-left: 32px;
+    margin-right: 32px;
+  }
 
-export const InfoText = styled.p`
-  color: #070b80;
-`;
-
-export const InfoWrapper = styled.div`
-  margin-top: 24px;
-  display: flex;
-  gap: 20px;
-  justify-content: space-between;
-`;
-
-export const ContainerOne = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 51px;
-`;
-
-export const InfoColumn = styled.div`
-  display: flex;
-  align-items: flex-start;
-  gap: 27px;
-  h5 {
-    color: #fd007d;
+  @media (max-width: 43.75em) {
+    margin-left: 18px;
+    margin-right: 18px;
   }
 `;
 
-export const InfoRow = styled.div`
-  p {
-    max-width: 582px;
-    margin-top: 13px;
-    color: #474747;
-    font-size: 16px;
+export const GoogleMapButton = styled.button`
+  border-radius: 12px;
+  background-color: #fd007d;
+  color: #ffff;
+  border: none;
+  padding: 12px;
+  margin-top: 10px;
+  font-size: 16px;
+
+  @media (max-width: 43.75em) {
+    margin-left: 18px;
+    margin-right: 18px;
   }
 `;

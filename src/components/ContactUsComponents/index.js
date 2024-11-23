@@ -1,65 +1,53 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PageTitleSection from "./../ReusableComponents/PageTitleSection";
 import SectionHeading from "./../ReusableComponents/SectionHeading";
-import {
-  ContactInformation,
-  InfoText,
-  Wrapper,
-  InfoWrapper,
-  InfoColumn,
-  InfoRow,
-  ContainerOne,
-} from "./ContactUs.styles";
-import Phone from "./../../assets/images/Vector.svg";
-import Message from "./../../assets/images/Vector (1).svg";
-import Location from "./../../assets/images/Location.svg";
+import { Wrapper, GoogleMapButton } from "./ContactUs.styles";
 
 import ContactForm from "./ContactForm";
 import GoogleMap from "./Googlemap";
+import ContactInformation from "./ContactInformation";
 
 function ContactUsComponents() {
+  const [showMapButton, setShowMapButton] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.matchMedia("(max-width: 35em)").matches) {
+        setShowMapButton(true);
+      } else {
+        setShowMapButton(false);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const openGoogleMap = () => {
+    window.open(
+      "https://www.google.com/maps?q=41.70657,44.736092&hl=en&z=17",
+      "_blank"
+    );
+  };
+
   return (
     <>
       <PageTitleSection title="კონტაქტი" />
       <SectionHeading heading="საკონტაქტო ინფორმაცია" showIcons={true} />
 
       <Wrapper>
-        <ContactInformation>
-          <InfoText>
-            ცხელი ხაზის სამუშაო საათებია ორშაბათიდან პარასკევის ჩათვლით
-            10:00-18:00 საათამდე.
-          </InfoText>
-          <InfoWrapper>
-            <ContainerOne>
-              <InfoColumn>
-                <img src={Phone} alt="arrow icon" />
-                <InfoRow>
-                  <h5>ტელეფონი</h5>
-                  <span href="tel:+995 32 2 195 015">(+995 32) 2 195 015</span>
-                </InfoRow>
-              </InfoColumn>
-              <InfoColumn>
-                <img src={Message} alt="arrow icon" />
-                <InfoRow>
-                  <h5>ელ.ფოსტა</h5>
-                  <a href="mailto:info@btu.edu.ge">info@btu.edu.ge</a>
-                </InfoRow>
-              </InfoColumn>
-            </ContainerOne>
-            <InfoColumn>
-              <img src={Location} alt="arrow icon" />
-              <InfoRow>
-                <h5>მისამართი</h5>
-                <p>თბილისი 0162, საქართველო ი.ჭავჭავაძის გამზირი N82</p>
-                <p>
-                  ჩვენს კამპუსამდე მოსვლა შესაძლებელია: ავტობუსით #173 #345 #351
-                  ან მიკროავტობუსით #449 #450
-                </p>
-              </InfoRow>
-            </InfoColumn>
-          </InfoWrapper>
-        </ContactInformation>
-        <GoogleMap />
+        <ContactInformation />
+
+        {showMapButton ? (
+          <GoogleMapButton onClick={openGoogleMap}>
+            Open Google Map
+          </GoogleMapButton>
+        ) : (
+          <GoogleMap />
+        )}
+
         <SectionHeading heading="მოგვწერე" showIcons={false} />
         <ContactForm />
       </Wrapper>

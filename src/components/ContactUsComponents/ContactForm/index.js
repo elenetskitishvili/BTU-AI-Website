@@ -6,7 +6,6 @@ import {
   InputContainer,
   Label,
   Input,
-  TextAreaContainer,
   TextArea,
   ButtonContainer,
 } from "./ContactForm.styles";
@@ -24,21 +23,21 @@ function ContactForm() {
             <Label>
               სახელი <span>*</span>
             </Label>
-            <Input></Input>
+            <Input placeholder="თქვენი სახელი"></Input>
           </InputContainer>
           <InputContainer>
             <Label>
               ელ.ფოსტა <span>*</span>
             </Label>
-            <Input></Input>
+            <Input placeholder="თქვენი ელ-ფოსტა"></Input>
           </InputContainer>
         </InputWrapper>
-        <TextAreaContainer>
+        <div>
           <Label>
             ტექსტი <span>*</span>
           </Label>
-          <TextArea></TextArea>
-        </TextAreaContainer>
+          <TextArea placeholder="ტექსტი..."></TextArea>
+        </div>
         <ButtonContainer>
           <p>გაგზავნა</p>
           <img src={Button}></img>

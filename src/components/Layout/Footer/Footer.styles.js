@@ -6,6 +6,8 @@ export const FooterContainer = styled.footer`
   flex-direction: column;
   position: relative;
   bottom: 0;
+  right: 0;
+  left: 0;
 `;
 
 export const Wrapper = styled.div`
@@ -31,10 +33,7 @@ export const Text = styled.p`
   color: #f1f1f1;
   line-height: 20px;
   margin: 0.5rem 0;
-  width: 407px;
-  @media (max-width: 45em) {
-    max-width: 50%;
-  }
+  max-width: 407px;
 `;
 export const ListItem = styled(Text).attrs({ as: "li" })`
   width: auto;
@@ -57,9 +56,13 @@ export const ContactUsWrapper = styled.div`
     right: 25%;
     top: 20%;
   }
+
   @media (max-width: 45em) {
     top: 5%;
     right: 55%;
+  }
+  media (max-width: 35em) {
+    right: 75%;
   }
 `;
 export const ContactUsContainer = styled.div`
@@ -92,7 +95,7 @@ export const InputContainer = styled.div`
 `;
 
 export const Input = styled.input`
-  width: 144px;
+  max-width: 144px;
   height: 21px;
   border-radius: 30px;
   border: none;
@@ -105,14 +108,26 @@ export const Input = styled.input`
     border: none;
     outline: none;
   }
+
+  @media (max-width: 20em) {
+    width: 105px;
+  }
 `;
 
 export const Button = styled.button`
   background: transparent;
   border: none;
+  @media (max-width: 35em) {
+    width: 45px;
+    height: 45px;
+  }
 `;
 
 export const Icon = styled.img`
   position: relative;
   right: 11px;
+  @media (max-width: 35em) {
+    width: 35px;
+    height: 35px;
+  }
 `;

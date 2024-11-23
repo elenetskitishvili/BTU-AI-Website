@@ -6,12 +6,25 @@ export const FormWrapper = styled.div`
   margin: 0 auto;
   color: #ffffff;
   border-radius: 6px;
+  @media (max-width: 75em) {
+    font-size: 80%;
+  }
+  @media (max-width: 35em) {
+    padding: 25px;
+  }
 `;
 
 export const FormHeading = styled.h5`
   font-weigth: 700;
   font-size: 24px;
   text-align: center;
+  @media (max-width: 75em) {
+    font-size: 18px;
+    text-align: left;
+  }
+  @media (max-width: 25em) {
+    font-size: 16px;
+  }
 `;
 
 export const Form = styled.form`
@@ -46,21 +59,27 @@ export const Label = styled.label`
   span {
     color: #fd007d;
   }
+  @media (max-width: 35em) {
+    font-size: 16px;
+  }
 `;
 
 export const Input = styled.input`
   width: 100%;
   height: 84px;
   border-radius: 12px;
+  padding: 7px;
+  @media (max-width: 35em) {
+    height: 49px;
+  }
 `;
-
-export const TextAreaContainer = styled.div``;
 
 export const TextArea = styled.textarea`
   width: 100%;
   min-height: 229px;
   resize: none;
   border-radius: 12px;
+  padding: 7px;
 `;
 
 export const ButtonContainer = styled.div`
@@ -75,6 +94,8 @@ export const ButtonContainer = styled.div`
   gap: 28px;
   padding: 10px 59px;
   margin-top: 39px;
-`;
 
-export const ButtonBox = styled.button``;
+  @media (max-width: 75em) {
+    max-width: 80%;
+  }
+`;
