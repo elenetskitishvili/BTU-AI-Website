@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import {
   FaqAsideWrapper,
   FaqAsideCard,
@@ -5,54 +6,36 @@ import {
   FaqAsideCardLink,
 } from "./FaqAsideStyles";
 
-import img1 from "../../../assets/images/faq-aside-1.jfif";
-import img2 from "../../../assets/images/faq-aside-2.png";
-import img3 from "../../../assets/images/faq-aside-3.jfif";
-
 export default function FaqAside() {
+  const [asideData, setAsideData] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch("http://127.0.0.1:8000/api/faq-aside/");
+        const data = await response.json();
+        setAsideData(data);
+      } catch (error) {
+        console.error("Error fetching FAQ aside data:", error);
+      }
+    }
+    fetchData();
+  }, []);
+
   return (
     <FaqAsideWrapper>
-      <FaqAsideCard>
-        <FaqAsideCardImage
-          src={img1}
-          alt="Trainings and workshops in the field of artificial intelligence"
-        />
-        <FaqAsideCardLink
-          href="https://btu.edu.ge/treningebi-da-vorqshophebi-khelovnuri-inteleqtis-mimarthulebith/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          ტრენინგები და ვორქშოფები ხელოვნური ინტელექტის მიმართულებით
-        </FaqAsideCardLink>
-      </FaqAsideCard>
-
-      <FaqAsideCard>
-        <FaqAsideCardImage
-          src={img2}
-          alt="BTU AI - Sustainability Lab Podcast Series!"
-        />
-        <FaqAsideCardLink
-          href="https://btu.edu.ge/btu-ai-sustainability-lab-podkastebis-seria/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          BTU AI - Sustainability Lab პოდკასტების სერია!
-        </FaqAsideCardLink>
-      </FaqAsideCard>
-
-      <FaqAsideCard>
-        <FaqAsideCardImage
-          src={img3}
-          alt="How to Use Artificial Intelligence - Training at BTU!"
-        />
-        <FaqAsideCardLink
-          href="https://btu.edu.ge/rogor-gamoviqheno-khelovnuri-inteleqti-ghia-treningi-qhvela-msurvelisthvis-btu-shi/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          როგორ გამოვიყენო ხელოვნური ინტელექტი - ტრენინგი BTU-ში!
-        </FaqAsideCardLink>
-      </FaqAsideCard>
+      {asideData.map((item) => (
+        <FaqAsideCard key={item.id}>
+          <FaqAsideCardImage src={item.img_url} alt={item.alt_text} />
+          <FaqAsideCardLink
+            href={item.link_url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {item.title}
+          </FaqAsideCardLink>
+        </FaqAsideCard>
+      ))}
     </FaqAsideWrapper>
   );
 }
