@@ -4,12 +4,16 @@ export const FaqContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 100%;
   max-width: 1245px;
   margin: 0 auto;
+  color: #fd007d;
 
-  @media (max-width: 768px) {
-    margin: 20px;
+  @media (max-width: 1300px) {
+    margin: 0 32px;
+  }
+
+  @media (max-width: 700px) {
+    margin: 0 18px;
   }
 `;
 
@@ -19,8 +23,9 @@ export const Line = styled.div`
   background-color: #fd007d;
   margin-right: 20px;
 
-  @media (max-width: 768px) {
-    width: 30px;
+  @media (max-width: 700px) {
+    width: 4px;
+    height: 30px;
   }
 `;
 
@@ -34,22 +39,24 @@ export const ListItem = styled.div`
     opacity: 0.8;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 700px) {
     margin-bottom: 15px;
   }
 `;
 
 export const Text = styled.span`
   font-family: "Noto Sans", sans-serif;
-  font-style: normal;
-  font-weight: 400;
   font-size: 24px;
+  font-weight: 400;
   line-height: 33px;
-  letter-spacing: -0.05em;
-  text-transform: uppercase;
   color: #070b80;
+  text-transform: uppercase;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1300px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 700px) {
     font-size: 18px;
   }
 `;
