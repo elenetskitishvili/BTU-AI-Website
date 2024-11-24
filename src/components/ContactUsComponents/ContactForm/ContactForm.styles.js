@@ -82,7 +82,7 @@ export const TextArea = styled.textarea`
   padding: 7px;
 `;
 
-export const ButtonContainer = styled.div`
+export const ButtonContainer = styled.button`
   margin: 0 auto;
   width: 290px;
   height: 53px;
@@ -94,7 +94,7 @@ export const ButtonContainer = styled.div`
   gap: 28px;
   padding: 10px 59px;
   margin-top: 39px;
-
+  color: #ffff;
   @media (max-width: 75em) {
     max-width: 80%;
   }
