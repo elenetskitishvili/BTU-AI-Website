@@ -10,7 +10,7 @@ const HeaderContainer = styled.div`
   align-items: flex-start;
   width: 100%;
   max-width: 1245px;
-  margin: 0 auto;
+  margin: 177px auto 0px;
 `;
 
 const Title = styled.h2`
@@ -32,7 +32,7 @@ const HorizontalLine = styled.div`
   width: 100%;
   height: 3px;
   background-color: #fd007d;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 
   @media (max-width: 768px) {
     margin-bottom: 15px;
@@ -48,7 +48,7 @@ const AccordionContainer = styled.div`
   max-width: 1245px;
   padding: 0;
   background: #ffffff;
-  margin: 20px auto;
+  margin: 20px auto 243px;
 
   @media (max-width: 768px) {
     max-width: 90%;
@@ -71,7 +71,7 @@ const AccordionItem = styled.div`
 
 const VerticalLine = styled.div`
   width: 5px;
-  height: 20px;
+  height: 40px;
   background-color: #fd007d;
   margin-right: 15px;
 `;
@@ -83,7 +83,9 @@ const QuestionContainer = styled.div`
 
 const Question = styled.h3`
   font-family: "Noto Sans", sans-serif;
-  font-size: 20px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32.69px;
   color: #070b80;
   margin: 0;
 
@@ -125,18 +127,18 @@ function AccordionSection() {
 
   const accordionData = [
     {
-      question: "AI ლაბორატორიის დასახელებები, რა შემიძლია შევისწავლო?",
+      question: "AI ლექტორის დახმარებით, რა შემიძლია შევისწავლო?",
       answer:
         "AI4GLOBE სკოლა, საგანმანათლებლო ინტენსივები, ტექნოლოგიის სწავლების პროგრამები.",
     },
     {
-      question: "AI სერვისები რას წარმოადგენენ და როგორ ვგებულობ?",
+      question: "AI სასწავლო რესურსები და მათზე წვდომა?",
       answer: "მოწყობილობის ინსტალაციები, მოხსენებები და ვორქშოფები.",
     },
     {
-      question: "რას წარმოადგენს AI4GLOBE ინიციატივა?",
+      question: "რას ემსახურება AI4GLOBE ინიციატივა?",
       answer:
-        "AI4GLOBE სკოლა არის გლობალური ინიციატივა ტექნოლოგიური განათლების და ზრდისთვის.",
+        "AI4Globe ახალი, საერთაშორისო ინიციატივაა, რომელიც გლობალურად, ხელოვნური ინტელექტის წიგნიერების ზრდას ისახავს მიზნად. პროექტი მნიშვნელოვანწილად ცვლის საგანმანათლებლო გამოცდილებას და ქმნის ხელოვნური ინტელექტის პოტენციალის რეალიზების ახალ შესაძლებლობებს.",
     },
     {
       question: "AI ლაბორატორიის დასახელებები, რა შემიძლია შევისწავლო?",
