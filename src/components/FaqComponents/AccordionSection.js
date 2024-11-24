@@ -1,58 +1,74 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import PlusIconImage from "../../assets/images/Xbox_Cross.svg";
-import MinusIconImage from "../../assets/images/Minus.svg";
-
+import PlusIconImage from "../../assets/images/plus-svg.svg";
+import MinusIconImage from "../../assets/images/minus-svg.svg";
 
 // Styled Components
 const HeaderContainer = styled.div`
+  max-width: 1245px;
+  margin: 0 auto;
+  margin-top: 137px;
+  margin-bottom: 40px;
+  color: #fd007d;
+  border-bottom: 3px solid #fd007d;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  max-width: 1245px;
-  margin: 177px auto 0px;
+
+  @media (max-width: 1300px) {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+
+  @media (max-width: 700px) {
+    margin-top: 50px;
+    margin-left: 18px;
+    margin-right: 18px;
+  }
 `;
 
 const Title = styled.h2`
   font-family: "Bebas Neue", sans-serif;
-  font-size: 36px;
+  font-size: 40px;
   font-weight: 400;
-  line-height: 43px;
+  line-height: 54.48px;
   text-transform: uppercase;
   color: #fd007d;
-  margin-bottom: 10px;
+  padding-bottom: 10px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1300px) {
+    font-size: 32px;
+  }
+
+  @media (max-width: 700px) {
     font-size: 24px;
     line-height: 30px;
   }
 `;
 
-const HorizontalLine = styled.div`
-  width: 100%;
-  height: 3px;
-  background-color: #fd007d;
-  margin-bottom: 40px;
+// const HorizontalLine = styled.div`
+//   width: 100%;
+//   height: 0.4px;
+//   background-color: #fd007d;
+//   margin-top: 6px;
 
-  @media (max-width: 768px) {
-    margin-bottom: 15px;
-  }
-`;
+//    @media (max-width: 1300px) {
+//     height: 0.1px;
+//   }
+// `;
 
 const AccordionContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
   max-width: 1245px;
+  margin: 0 auto 243px;
   padding: 0;
-  background: #ffffff;
-  margin: 20px auto 243px;
 
-  @media (max-width: 768px) {
-    max-width: 90%;
+  @media (max-width: 1300px) {
+    margin: 0 32px 243px;
+  }
+
+  @media (max-width: 700px) {
+    margin: 0 18px 50px;
   }
 `;
 
@@ -60,8 +76,7 @@ const AccordionItem = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  padding: 10px 0;
+  padding: 15px 0;
   border-bottom: 1px solid #f0f0f0;
   cursor: pointer;
 
@@ -74,7 +89,12 @@ const VerticalLine = styled.div`
   width: 5px;
   height: 40px;
   background-color: #fd007d;
-  margin-right: 15px;
+  margin-right: 10px;
+
+  @media (max-width: 700px) {
+    height: 30px;
+    width: 4px;
+  }
 `;
 
 const QuestionContainer = styled.div`
@@ -90,23 +110,26 @@ const Question = styled.h3`
   color: #070b80;
   margin: 0;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1300px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 700px) {
     font-size: 16px;
+    line-height: 16px;
   }
 `;
 
 const IconImage = styled.img`
-  width: ${({ isOpen }) => (isOpen ? "28px" : "35px")};
-  height: auto;
+  width: 30px;
 
-  @media (max-width: 768px) {
-    width: ${({ isOpen }) => (isOpen ? "24px" : "30px")};
+  @media (max-width: 700px) {
+    width: 20px;
   }
 `;
 
 const AccordionContent = styled.div`
   width: 100%;
-  background-color: #ffffff;
   max-height: ${({ isOpen }) => (isOpen ? "500px" : "0px")};
   overflow: hidden;
   transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
@@ -115,8 +138,12 @@ const AccordionContent = styled.div`
   font-size: 18px;
   color: #333;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1300px) {
     font-size: 16px;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 14px;
   }
 `;
 
@@ -139,13 +166,11 @@ function AccordionSection() {
     },
     {
       question: "რას ემსახურება AI4GLOBE ინიციატივა?",
-      answer:
-        "AI4Globe ახალი, საერთაშორისო ინიციატივაა, რომელიც გლობალურად, ხელოვნური ინტელექტის წიგნიერების ზრდას ისახავს მიზნად. პროექტი მნიშვნელოვანწილად ცვლის საგანმანათლებლო გამოცდილებას და ქმნის ხელოვნური ინტელექტის პოტენციალის რეალიზების ახალ შესაძლებლობებს.",
+      answer: "AI4Globe ახალი, საერთაშორისო ინიციატივაა.",
     },
     {
       question: "AI ლაბორატორიის დასახელებები, რა შემიძლია შევისწავლო?",
-      answer:
-        "AI4GLOBE სკოლა, საგანმანათლებლო ინტენსივები, ტექნოლოგიის სწავლების პროგრამები.",
+      answer: "AI4GLOBE სკოლა, საგანმანათლებლო ინტენსივები.",
     },
   ];
 
@@ -153,12 +178,12 @@ function AccordionSection() {
     <>
       <HeaderContainer>
         <Title>გაიგე სწრაფად</Title>
-        <HorizontalLine />
+        {/* <HorizontalLine /> */}
       </HeaderContainer>
 
       <AccordionContainer>
         {accordionData.map((item, index) => (
-          <div key={index} style={{ width: "100%" }}>
+          <div key={index}>
             <AccordionItem onClick={() => toggleAccordion(index)}>
               <QuestionContainer>
                 <VerticalLine />
@@ -167,10 +192,8 @@ function AccordionSection() {
               <IconImage
                 src={activeIndex === index ? MinusIconImage : PlusIconImage}
                 alt={activeIndex === index ? "Minus Icon" : "Plus Icon"}
-                isOpen={activeIndex === index}
               />
             </AccordionItem>
-
             <AccordionContent isOpen={activeIndex === index}>
               {item.answer}
             </AccordionContent>
