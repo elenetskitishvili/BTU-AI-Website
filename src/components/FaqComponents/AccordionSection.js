@@ -3,6 +3,7 @@ import styled from "styled-components";
 import PlusIconImage from "../../assets/images/Xbox_Cross.svg";
 import MinusIconImage from "../../assets/images/Minus.svg";
 
+
 // Styled Components
 const HeaderContainer = styled.div`
   display: flex;
@@ -95,20 +96,21 @@ const Question = styled.h3`
 `;
 
 const IconImage = styled.img`
-  width: 24px;
-  height: 24px;
+  width: ${({ isOpen }) => (isOpen ? "28px" : "35px")};
+  height: auto;
 
   @media (max-width: 768px) {
-    width: 20px;
-    height: 20px;
+    width: ${({ isOpen }) => (isOpen ? "24px" : "30px")};
   }
 `;
 
 const AccordionContent = styled.div`
   width: 100%;
   background-color: #ffffff;
-  padding: ${({ isOpen }) => (isOpen ? "10px 15px" : "0")};
-  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
+  max-height: ${({ isOpen }) => (isOpen ? "500px" : "0px")};
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+  padding: ${({ isOpen }) => (isOpen ? "10px 15px" : "0 15px")};
   font-family: "Noto Sans", sans-serif;
   font-size: 18px;
   color: #333;
@@ -165,6 +167,7 @@ function AccordionSection() {
               <IconImage
                 src={activeIndex === index ? MinusIconImage : PlusIconImage}
                 alt={activeIndex === index ? "Minus Icon" : "Plus Icon"}
+                isOpen={activeIndex === index}
               />
             </AccordionItem>
 
