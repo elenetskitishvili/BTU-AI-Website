@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import PlusIconImage from "../../assets/images/Xbox_Cross.svg";
+import MinusIconImage from "../../assets/images/Minus.svg";
 
 // Styled Components
 const HeaderContainer = styled.div`
@@ -60,7 +62,7 @@ const AccordionItem = styled.div`
   width: 100%;
   padding: 10px 0;
   border-bottom: 1px solid #f0f0f0;
-  cursor: pointer; /* Add cursor pointer */
+  cursor: pointer;
 
   &:last-child {
     border-bottom: none;
@@ -90,19 +92,20 @@ const Question = styled.h3`
   }
 `;
 
-const PlusIcon = styled.span`
-  font-size: 24px;
-  color: #fd007d;
+const IconImage = styled.img`
+  width: 24px;
+  height: 24px;
 
   @media (max-width: 768px) {
-    font-size: 20px;
+    width: 20px;
+    height: 20px;
   }
 `;
 
 const AccordionContent = styled.div`
   width: 100%;
   background-color: #ffffff;
-  padding: ${({ isOpen }) => (isOpen ? "10px 15px" : "0")}; /* Remove underline */
+  padding: ${({ isOpen }) => (isOpen ? "10px 15px" : "0")};
   display: ${({ isOpen }) => (isOpen ? "block" : "none")};
   font-family: "Noto Sans", sans-serif;
   font-size: 18px;
@@ -157,7 +160,10 @@ function AccordionSection() {
                 <VerticalLine />
                 <Question>{item.question}</Question>
               </QuestionContainer>
-              <PlusIcon>{activeIndex === index ? "-" : "+"}</PlusIcon>
+              <IconImage
+                src={activeIndex === index ? MinusIconImage : PlusIconImage}
+                alt={activeIndex === index ? "Minus Icon" : "Plus Icon"}
+              />
             </AccordionItem>
 
             <AccordionContent isOpen={activeIndex === index}>
