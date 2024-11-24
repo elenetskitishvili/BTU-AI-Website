@@ -4,8 +4,7 @@ export const FaqContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-//   margin: 50px;
-width: 100%;
+  width: 100%;
   max-width: 1245px;
   margin: 0 auto;
 
@@ -15,10 +14,9 @@ width: 100%;
 `;
 
 export const Line = styled.div`
-  width: 40px;
-  height: 0px;
-  border: 5px solid #fd007d;
-  transform: rotate(90deg);
+  width: 5px;
+  height: 40px;
+  background-color: #fd007d;
   margin-right: 20px;
 
   @media (max-width: 768px) {
