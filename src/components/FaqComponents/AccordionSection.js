@@ -40,21 +40,10 @@ const Title = styled.h2`
   }
 
   @media (max-width: 700px) {
-    font-size: 24px;
+    font-size: 20px;
     line-height: 30px;
   }
 `;
-
-// const HorizontalLine = styled.div`
-//   width: 100%;
-//   height: 0.4px;
-//   background-color: #fd007d;
-//   margin-top: 6px;
-
-//    @media (max-width: 1300px) {
-//     height: 0.1px;
-//   }
-// `;
 
 const AccordionContainer = styled.div`
   display: flex;
@@ -89,11 +78,11 @@ const VerticalLine = styled.div`
   width: 5px;
   height: 40px;
   background-color: #fd007d;
-  margin-right: 10px;
+  margin-right: 20px;
 
   @media (max-width: 700px) {
-    height: 30px;
     width: 4px;
+    height: 30px;
   }
 `;
 
@@ -115,8 +104,8 @@ const Question = styled.h3`
   }
 
   @media (max-width: 700px) {
-    font-size: 16px;
-    line-height: 16px;
+    font-size: 14px;
+    line-height: 18px;
   }
 `;
 
@@ -124,7 +113,7 @@ const IconImage = styled.img`
   width: 30px;
 
   @media (max-width: 700px) {
-    width: 20px;
+    width: 16px;
   }
 `;
 
@@ -178,7 +167,6 @@ function AccordionSection() {
     <>
       <HeaderContainer>
         <Title>გაიგე სწრაფად</Title>
-        {/* <HorizontalLine /> */}
       </HeaderContainer>
 
       <AccordionContainer>
