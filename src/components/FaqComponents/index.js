@@ -32,6 +32,8 @@ function FaqComponents() {
           <Text>AI წიგნიერების სერია</Text>
         </ListItem>
       </FaqContainer>
+
+      {/* Accordion Section */}
       <AccordionSection />
     </div>
   );

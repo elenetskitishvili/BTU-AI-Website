@@ -2,18 +2,13 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 // Styled Components
-const SectionContainer = styled.div`
+const HeaderContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 50px auto;
+  align-items: flex-start;
   width: 100%;
   max-width: 1245px;
-  padding: 20px;
-
-  @media (max-width: 768px) {
-    padding: 10px;
-  }
+  margin: 0 auto;
 `;
 
 const Title = styled.h2`
@@ -23,10 +18,11 @@ const Title = styled.h2`
   line-height: 43px;
   text-transform: uppercase;
   color: #fd007d;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 
   @media (max-width: 768px) {
     font-size: 24px;
+    line-height: 30px;
   }
 `;
 
@@ -44,64 +40,79 @@ const HorizontalLine = styled.div`
 const AccordionContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  max-width: 1245px;
+  padding: 0;
+  background: #ffffff;
+  margin: 20px auto;
+
+  @media (max-width: 768px) {
+    max-width: 90%;
+  }
 `;
 
 const AccordionItem = styled.div`
-  border: 1px solid #fd007d;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  overflow: hidden;
-
-  @media (max-width: 768px) {
-    margin-bottom: 8px;
-  }
-`;
-
-const AccordionHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
-  background-color: #f9f9f9;
-  cursor: pointer;
+  width: 100%;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer; /* Add cursor pointer */
 
-  h3 {
-    font-family: "Noto Sans", sans-serif;
-    font-size: 20px;
-    color: #070b80;
-    margin: 0;
-
-    @media (max-width: 768px) {
-      font-size: 16px;
-    }
+  &:last-child {
+    border-bottom: none;
   }
+`;
 
-  span {
-    font-size: 24px;
-    color: #fd007d;
+const VerticalLine = styled.div`
+  width: 5px;
+  height: 20px;
+  background-color: #fd007d;
+  margin-right: 15px;
+`;
 
-    @media (max-width: 768px) {
-      font-size: 20px;
-    }
+const QuestionContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const Question = styled.h3`
+  font-family: "Noto Sans", sans-serif;
+  font-size: 20px;
+  color: #070b80;
+  margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+`;
+
+const PlusIcon = styled.span`
+  font-size: 24px;
+  color: #fd007d;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
   }
 `;
 
 const AccordionContent = styled.div`
-  padding: 20px;
-  background-color: #fff;
+  width: 100%;
+  background-color: #ffffff;
+  padding: ${({ isOpen }) => (isOpen ? "10px 15px" : "0")}; /* Remove underline */
   display: ${({ isOpen }) => (isOpen ? "block" : "none")};
   font-family: "Noto Sans", sans-serif;
   font-size: 18px;
   color: #333;
 
   @media (max-width: 768px) {
-    font-size: 14px;
-    padding: 15px;
+    font-size: 16px;
   }
 `;
 
-// Accordion Component
 function AccordionSection() {
   const [activeIndex, setActiveIndex] = useState(null);
 
@@ -124,26 +135,38 @@ function AccordionSection() {
       answer:
         "AI4GLOBE სკოლა არის გლობალური ინიციატივა ტექნოლოგიური განათლების და ზრდისთვის.",
     },
+    {
+      question: "AI ლაბორატორიის დასახელებები, რა შემიძლია შევისწავლო?",
+      answer:
+        "AI4GLOBE სკოლა, საგანმანათლებლო ინტენსივები, ტექნოლოგიის სწავლების პროგრამები.",
+    },
   ];
 
   return (
-    <SectionContainer>
-      <Title>გაიგე სწრაფად</Title>
-      <HorizontalLine />
+    <>
+      <HeaderContainer>
+        <Title>გაიგე სწრაფად</Title>
+        <HorizontalLine />
+      </HeaderContainer>
+
       <AccordionContainer>
         {accordionData.map((item, index) => (
-          <AccordionItem key={index}>
-            <AccordionHeader onClick={() => toggleAccordion(index)}>
-              <h3>{item.question}</h3>
-              <span>{activeIndex === index ? "-" : "+"}</span>
-            </AccordionHeader>
+          <div key={index} style={{ width: "100%" }}>
+            <AccordionItem onClick={() => toggleAccordion(index)}>
+              <QuestionContainer>
+                <VerticalLine />
+                <Question>{item.question}</Question>
+              </QuestionContainer>
+              <PlusIcon>{activeIndex === index ? "-" : "+"}</PlusIcon>
+            </AccordionItem>
+
             <AccordionContent isOpen={activeIndex === index}>
               {item.answer}
             </AccordionContent>
-          </AccordionItem>
+          </div>
         ))}
       </AccordionContainer>
-    </SectionContainer>
+    </>
   );
 }
 
