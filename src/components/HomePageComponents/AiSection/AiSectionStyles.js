@@ -4,11 +4,16 @@ import styled from "styled-components";
 export const SectionWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  position: relative;
   width: 100%;
   max-width: 1245px;
   margin: 0 auto;
-  padding: 56px 0px;
+  padding: 56px 32px; /* Added padding for consistency */
   background-color: #ffffff;
+
+  @media (max-width: 968px) {
+    padding: 56px 16px; /* Adjust padding for smaller screens */
+  }
 `;
 
 // Two-Column Content Wrapper
@@ -20,9 +25,9 @@ export const ContentWrapper = styled.div`
   align-items: flex-start;
   width: 100%;
 
-  @media (max-width: 768px) {
+  @media (max-width: 968px) {
     flex-direction: column;
-    align-items: center;
+    gap: 40px; /* Increased gap for better separation when stacked */
   }
 `;
 
@@ -118,18 +123,33 @@ export const Description = styled.div`
 // Right Column: Video Wrapper
 export const VideoWrapper = styled.div`
   flex: 1;
-  max-width: 100%;
-  aspect-ratio: 16 / 9;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Enforces the 16:9 aspect ratio */
   margin: 0 auto;
 
   iframe {
     width: 100%;
-    height: 100%;
+    height: 100%; /* Ensures the iframe takes up the full size of the wrapper */
     border: none;
   }
 
+  /* Ensure aspect-ratio is maintained on smaller screens */
+  @media (max-width: 968px) {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Retain the aspect ratio */
+    margin-top: 20px;
+  }
+
   @media (max-width: 768px) {
-    max-width: 100%;
-    aspect-ratio: auto;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Retain the aspect ratio */
+    margin-top: 16px;
+  }
+
+  @media (max-width: 375px) {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Retain the aspect ratio */
+    margin-top: 12px;
   }
 `;
+
