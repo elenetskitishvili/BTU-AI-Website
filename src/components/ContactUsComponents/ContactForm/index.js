@@ -8,6 +8,8 @@ import {
   Input,
   TextArea,
   ButtonContainer,
+  ErrorMessage,
+  SuccessMessage,
 } from "./ContactForm.styles";
 import Button from "./../../../assets/images/contactbutton.svg";
 import { useState } from "react";
@@ -40,7 +42,6 @@ function ContactForm() {
       [name]: value,
     }));
     setError("");
-    setSuccessMessage("");
   };
 
   const handleSubmit = async (e) => {
@@ -55,6 +56,7 @@ function ContactForm() {
     try {
       setLoading(true);
       setError("");
+      setSuccessMessage("");
 
       const response = await fetch("http://127.0.0.1:8000/api/contact/", {
         method: "POST",
@@ -128,11 +130,8 @@ function ContactForm() {
             required
           />
         </div>
-        {error && <p style={{ color: "red" }}>{error}</p>} {/* Error message */}
-        {successMessage && (
-          <p style={{ color: "green" }}>{successMessage}</p>
-        )}{" "}
-        {/* Success message */}
+        {error && <ErrorMessage>{error}</ErrorMessage>}
+        {successMessage && <SuccessMessage>{successMessage}</SuccessMessage>}
         <ButtonContainer type="submit" disabled={loading}>
           <p>{loading ? "გაგზავნა..." : "გაგზავნა"}</p>
           <img src={Button} alt="button" />
