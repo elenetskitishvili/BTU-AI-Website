@@ -9,7 +9,7 @@ function SectionHeading({ heading, faq, showIcons = true }) {
   return (
     <SectionHeadingWrapper>
       <SectionHeadingTitle>
-        {faq && <FaqPrefix>{faq} / </FaqPrefix>}
+        {faq && <FaqPrefix href="/faq">{faq} / </FaqPrefix>}
         {heading}
       </SectionHeadingTitle>
 
