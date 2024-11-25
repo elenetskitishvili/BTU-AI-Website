@@ -12,7 +12,9 @@ export default function AiResearchArticle() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/research-articles/")
+    fetch(
+      "https://wai-django-final-b9968118d906.herokuapp.com/api/research-articles/"
+    )
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch articles");

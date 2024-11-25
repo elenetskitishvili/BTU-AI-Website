@@ -12,7 +12,9 @@ export default function FaqAside() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch("http://127.0.0.1:8000/api/faq-aside/");
+        const response = await fetch(
+          "https://wai-django-final-b9968118d906.herokuapp.com/api/faq-aside/"
+        );
         const data = await response.json();
         setAsideData(data);
       } catch (error) {

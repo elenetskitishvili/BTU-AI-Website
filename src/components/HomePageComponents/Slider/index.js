@@ -21,7 +21,9 @@ function Slider() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/homepage_slider/api/sliders/")
+    fetch(
+      "https://wai-django-final-b9968118d906.herokuapp.com/homepage_slider/api/sliders/"
+    )
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);

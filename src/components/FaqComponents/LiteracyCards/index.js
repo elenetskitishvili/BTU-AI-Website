@@ -12,7 +12,9 @@ export default function LiteracyCards() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/faq-literacy/literacy-cards/")
+    fetch(
+      "https://wai-django-final-b9968118d906.herokuapp.com/faq-literacy/literacy-cards/"
+    )
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch data");
