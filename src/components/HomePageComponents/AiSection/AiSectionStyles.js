@@ -8,11 +8,11 @@ export const SectionWrapper = styled.div`
   width: 100%;
   max-width: 1245px;
   margin: 0 auto;
-  padding: 56px 32px; /* Added padding for consistency */
+  padding: 56px 32px;
   background-color: #ffffff;
 
   @media (max-width: 968px) {
-    padding: 56px 16px; /* Adjust padding for smaller screens */
+    padding: 56px 16px;
   }
 `;
 
@@ -27,7 +27,7 @@ export const ContentWrapper = styled.div`
 
   @media (max-width: 968px) {
     flex-direction: column;
-    gap: 40px; /* Increased gap for better separation when stacked */
+    gap: 40px;
   }
 `;
 
@@ -124,32 +124,30 @@ export const Description = styled.div`
 export const VideoWrapper = styled.div`
   flex: 1;
   width: 100%;
-  aspect-ratio: 16 / 9; /* Enforces the 16:9 aspect ratio */
+  aspect-ratio: 16 / 9;
   margin: 0 auto;
 
   iframe {
     width: 100%;
-    height: 100%; /* Ensures the iframe takes up the full size of the wrapper */
+    height: 100%;
     border: none;
   }
 
-  /* Ensure aspect-ratio is maintained on smaller screens */
   @media (max-width: 968px) {
     width: 100%;
-    aspect-ratio: 16 / 9; /* Retain the aspect ratio */
+    aspect-ratio: 16 / 9;
     margin-top: 20px;
   }
 
   @media (max-width: 768px) {
     width: 100%;
-    aspect-ratio: 16 / 9; /* Retain the aspect ratio */
+    aspect-ratio: 16 / 9;
     margin-top: 16px;
   }
 
   @media (max-width: 375px) {
     width: 100%;
-    aspect-ratio: 16 / 9; /* Retain the aspect ratio */
+    aspect-ratio: 16 / 9;
     margin-top: 12px;
   }
 `;
-
