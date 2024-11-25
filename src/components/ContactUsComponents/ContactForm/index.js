@@ -69,6 +69,7 @@ function ContactForm() {
         }
       );
 
+
       if (!response.ok) {
         const errorData = await response.text();
         throw new Error(errorData.error || "Submission failed");
