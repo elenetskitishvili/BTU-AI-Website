@@ -1,5 +1,4 @@
 import styled from "styled-components";
-export const ContactInformation = styled.div``;
 
 export const InfoText = styled.p`
   color: #070b80;
