@@ -6,8 +6,8 @@ export const FooterContainer = styled.footer`
   flex-direction: column;
   position: relative;
   bottom: 0;
-  left: 0;
   right: 0;
+  left: 0;
 `;
 
 export const Wrapper = styled.div`
@@ -33,10 +33,7 @@ export const Text = styled.p`
   color: #f1f1f1;
   line-height: 20px;
   margin: 0.5rem 0;
-  width: 407px;
-  @media (max-width: 45em) {
-    max-width: 50%;
-  }
+  max-width: 407px;
 `;
 export const ListItem = styled(Text).attrs({ as: "li" })`
   width: auto;
@@ -51,17 +48,86 @@ export const CopyrightContainer = styled.div`
   }
 `;
 
-export const ContactUsContainer = styled.div`
+export const ContactUsWrapper = styled.div`
   position: absolute;
   bottom: 0;
   right: 0;
   @media (max-width: 85em) {
-    position: absolute;
     right: 25%;
     top: 20%;
   }
+
   @media (max-width: 45em) {
     top: 5%;
     right: 55%;
+  }
+  media (max-width: 35em) {
+    right: 75%;
+  }
+`;
+export const ContactUsContainer = styled.div`
+  width: 539px;
+  height: 382px;
+  background-color: #fd007d;
+  border-top-left-radius: 40px;
+  @media (max-width: 85em) {
+    width: 0px;
+    height: 0px;
+  }
+`;
+
+export const Form = styled.form`
+  padding: 179px 0 0 47px;
+  @media (max-width: 85em) {
+    padding: 0;
+  }
+`;
+
+export const Label = styled.label`
+  font-weight: 700;
+  font-size: 13px;
+  color: #ffffff;
+`;
+
+export const InputContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const Input = styled.input`
+  max-width: 144px;
+  height: 21px;
+  border-radius: 30px;
+  border: none;
+  padding-left: 11px;
+  &::placeholder {
+    color: #4747476e;
+    font-weight: 700;
+  }
+  &:focus {
+    border: none;
+    outline: none;
+  }
+
+  @media (max-width: 20em) {
+    width: 105px;
+  }
+`;
+
+export const Button = styled.button`
+  background: transparent;
+  border: none;
+  @media (max-width: 35em) {
+    width: 45px;
+    height: 45px;
+  }
+`;
+
+export const Icon = styled.img`
+  position: relative;
+  right: 11px;
+  @media (max-width: 35em) {
+    width: 35px;
+    height: 35px;
   }
 `;

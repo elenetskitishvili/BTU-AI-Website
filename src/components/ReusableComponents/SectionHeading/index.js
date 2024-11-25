@@ -5,7 +5,7 @@ import {
   SectionHeadingIcons,
 } from "./SectionHeadingStyles";
 
-function SectionHeading({ heading, faq }) {
+function SectionHeading({ heading, faq, showIcons = true }) {
   return (
     <SectionHeadingWrapper>
       <SectionHeadingTitle>
@@ -13,26 +13,28 @@ function SectionHeading({ heading, faq }) {
         {heading}
       </SectionHeadingTitle>
 
-      <SectionHeadingIcons>
-        <a href="/faq/ailab">
-          <img src="/icons/facebook.svg" alt="Facebook" />
-        </a>
-        <a href="/faq/ailab">
-          <img src="/icons/linkedin.svg" alt="LinkedIn" />
-        </a>
-        <a href="/faq/ailab">
-          <img src="/icons/instagram.svg" alt="Instagram" />
-        </a>
-        <a href="/faq/ailab">
-          <img src="/icons/youtube.svg" alt="YouTube" />
-        </a>
-        <a href="/faq/ailab">
-          <img src="/icons/tiktok.svg" alt="TikTok" />
-        </a>
-        <a href="/faq/ailab">
-          <img src="/icons/google.svg" alt="Google" />
-        </a>
-      </SectionHeadingIcons>
+      {showIcons && (
+        <SectionHeadingIcons>
+          <a href="/faq/ailab">
+            <img src="/icons/facebook.svg" alt="Facebook" />
+          </a>
+          <a href="/faq/ailab">
+            <img src="/icons/linkedin.svg" alt="LinkedIn" />
+          </a>
+          <a href="/faq/ailab">
+            <img src="/icons/instagram.svg" alt="Instagram" />
+          </a>
+          <a href="/faq/ailab">
+            <img src="/icons/youtube.svg" alt="YouTube" />
+          </a>
+          <a href="/faq/ailab">
+            <img src="/icons/tiktok.svg" alt="TikTok" />
+          </a>
+          <a href="/faq/ailab">
+            <img src="/icons/google.svg" alt="Google" />
+          </a>
+        </SectionHeadingIcons>
+      )}
     </SectionHeadingWrapper>
   );
 }

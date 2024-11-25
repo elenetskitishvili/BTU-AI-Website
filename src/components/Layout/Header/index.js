@@ -19,6 +19,7 @@ import {
   LogoContainer,
   LogoImage,
 } from "./Header.styles";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -41,7 +42,9 @@ function Header() {
       </TopBar>
       <LogoContainer>
         <HeaderWrapper>
-          <LogoImage src={logo} alt="btu ai logo" />
+          <Link to="/">
+            <LogoImage src={logo} alt="btu ai logo" />
+          </Link>
           <Navigation />
         </HeaderWrapper>
       </LogoContainer>
