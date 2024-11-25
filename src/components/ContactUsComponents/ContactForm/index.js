@@ -58,16 +58,13 @@ function ContactForm() {
       setError("");
       setSuccessMessage("");
 
-      const response = await fetch(
-        "https://wai-django-final-b9968118d906.herokuapp.com/api/contact/",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formValues),
-        }
-      );
+      const response = await fetch("http://127.0.0.1:8000/contactus/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formValues),
+      });
 
       if (!response.ok) {
         const errorData = await response.text();
