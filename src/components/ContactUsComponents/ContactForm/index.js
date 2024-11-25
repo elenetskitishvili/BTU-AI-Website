@@ -59,7 +59,7 @@ function ContactForm() {
       setSuccessMessage("");
 
       const response = await fetch(
-        "https://wai-django-final-b9968118d906.herokuapp.com/api/contact/",
+        "https://wai-django-final-b9968118d906.herokuapp.com/contactus/",
         {
           method: "POST",
           headers: {

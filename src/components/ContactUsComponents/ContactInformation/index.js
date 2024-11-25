@@ -1,5 +1,4 @@
 import {
-  ContactInformation,
   InfoText,
   InfoWrapper,
   InfoColumn,
@@ -15,7 +14,7 @@ import Location from "./../../../assets/images/Location.svg";
 
 function ContactInformaion() {
   return (
-    <ContactInformation>
+    <>
       <InfoText>
         ცხელი ხაზის სამუშაო საათებია ორშაბათიდან პარასკევის ჩათვლით 10:00-18:00
         საათამდე.
@@ -51,7 +50,7 @@ function ContactInformaion() {
           </InfoRow>
         </InfoColumn>
       </InfoWrapper>
-    </ContactInformation>
+    </>
   );
 }
 
