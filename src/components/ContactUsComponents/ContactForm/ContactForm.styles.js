@@ -82,7 +82,7 @@ export const TextArea = styled.textarea`
   padding: 7px;
 `;
 
-export const ButtonContainer = styled.div`
+export const ButtonContainer = styled.button`
   margin: 0 auto;
   width: 290px;
   height: 53px;
@@ -94,8 +94,20 @@ export const ButtonContainer = styled.div`
   gap: 28px;
   padding: 10px 59px;
   margin-top: 39px;
-
+  color: #ffff;
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
+  opacity: ${({ disabled }) => (disabled ? 0.6 : 1)};
   @media (max-width: 75em) {
     max-width: 80%;
   }
+`;
+
+export const ErrorMessage = styled.p`
+  color: red;
+  font-size: 1.5rem;
+`;
+
+export const SuccessMessage = styled.p`
+  color: green;
+  font-size: 1.5rem;
 `;
