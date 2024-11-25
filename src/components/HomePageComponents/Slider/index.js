@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -14,13 +15,39 @@ import {
   SlideLogo,
 } from "./SliderStyles.js";
 
-import logoWhite from "../../../assets/images/btu-logo-white.png";
-import slide1 from "../../../assets/images/homepage-slider-img-1.jpg";
-import slide2 from "../../../assets/images/homepage-slider-img-2.PNG";
-import slide3 from "../../../assets/images/homepage-slider-img-3.PNG";
-import slide4 from "../../../assets/images/homepage-slider-img-4.PNG";
-
 function Slider() {
+  const [slides, setSlides] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch(
+      "https://wai-django-final-b9968118d906.herokuapp.com/homepage_slider/api/sliders/"
+    )
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setSlides(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
   return (
     <StyledSwiper
       modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -28,58 +55,24 @@ function Slider() {
       slidesPerView={1}
       navigation
     >
-      <SwiperSlide>
-        <Slide>
-          <SlideBackground src={slide1} alt="" />
-          <SlideOverlay />
-          <SlideContent>
-            <SlideHeadingMain>BTU AI ლექტორი</SlideHeadingMain>
-            <SlideHeadingSecondary>
-              WEB DEVELOPMENT <br /> FUNDAMENTALS
-            </SlideHeadingSecondary>
-            <SlideLogo src={logoWhite} alt="btu logo white" />
-          </SlideContent>
-        </Slide>
-      </SwiperSlide>
-      <SwiperSlide>
-        <Slide>
-          <SlideBackground src={slide2} alt="" />
-          <SlideOverlay />
-          <SlideContent>
-            <SlideHeadingMain>BTU AI ლექტორი</SlideHeadingMain>
-            <SlideHeadingSecondary>
-              WEB DEVELOPMENT <br /> FUNDAMENTALS
-            </SlideHeadingSecondary>
-            <SlideLogo src={logoWhite} alt="btu logo white" />
-          </SlideContent>
-        </Slide>
-      </SwiperSlide>
-      <SwiperSlide>
-        <Slide>
-          <SlideBackground src={slide3} alt="" />
-          <SlideOverlay />
-          <SlideContent>
-            <SlideHeadingMain>BTU AI ლექტორი</SlideHeadingMain>
-            <SlideHeadingSecondary>
-              WEB DEVELOPMENT <br /> FUNDAMENTALS
-            </SlideHeadingSecondary>
-            <SlideLogo src={logoWhite} alt="btu logo white" />
-          </SlideContent>
-        </Slide>
-      </SwiperSlide>
-      <SwiperSlide>
-        <Slide>
-          <SlideBackground src={slide4} alt="" />
-          <SlideOverlay />
-          <SlideContent>
-            <SlideHeadingMain>BTU AI ლექტორი</SlideHeadingMain>
-            <SlideHeadingSecondary>
-              WEB DEVELOPMENT <br /> FUNDAMENTALS
-            </SlideHeadingSecondary>
-            <SlideLogo src={logoWhite} alt="btu logo white" />
-          </SlideContent>
-        </Slide>
-      </SwiperSlide>
+      {slides.map((slide, index) => (
+        <SwiperSlide key={`slide-${index}`}>
+          <Slide>
+            <SlideBackground
+              src={slide.background_image}
+              alt={`Slide ${index}`}
+            />
+            <SlideOverlay />
+            <SlideContent>
+              <SlideHeadingMain>{slide.main_heading}</SlideHeadingMain>
+              <SlideHeadingSecondary>
+                {slide.secondary_heading}
+              </SlideHeadingSecondary>
+              <SlideLogo src={slide.logo} alt="Logo" />
+            </SlideContent>
+          </Slide>
+        </SwiperSlide>
+      ))}
     </StyledSwiper>
   );
 }

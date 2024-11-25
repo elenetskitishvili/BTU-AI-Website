@@ -40,8 +40,9 @@ export const SectionHeadingTitle = styled.h2`
   }
 `;
 
-export const FaqPrefix = styled.span`
+export const FaqPrefix = styled.a`
   color: rgba(253, 0, 125, 0.5);
+  text-decoration: none;
 `;
 
 export const SectionHeadingIcons = styled.div`
